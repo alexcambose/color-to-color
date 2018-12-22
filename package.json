@@ -1,5 +1,5 @@
 {
-  "name": "tctc",
+  "name": "color-to-color",
   "version": "1.0.0",
   "description": "Transform a color to color based on a percent",
   "main": "index.js",
