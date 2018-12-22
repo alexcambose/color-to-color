@@ -1,0 +1,27 @@
+{
+  "name": "c-to-c-percent",
+  "version": "1.0.0",
+  "description": "Transform a color to another color based on a percent",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "color": "^3.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.10.0",
+    "jest": "^23.6.0"
+  },
+  "scripts": {
+    "test": "npm test"
+  },
+  "keywords": [
+    "color",
+    "percent",
+    "transform",
+    "manipulation"
+  ],
+  "author": "Alexandru Cambose",
+  "license": "MIT"
+}
