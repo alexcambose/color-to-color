@@ -4,6 +4,48 @@ const color = require('color-string')
 describe('color-to-color', () => {
   const c1 = 'red'
   const c2 = 'blue'
+  it('transforms red color', () => {
+    expect(
+      c2c('rgb(255, 0, 0)')
+        .toColor('rgb(0,0,0)')
+        .withPercent(100)
+        .get('keyword')
+    ).toEqual('black')
+    expect(
+      c2c('rgb(0, 0, 0)')
+        .toColor('rgb(255,0,0)')
+        .withPercent(100)
+        .get('keyword')
+    ).toEqual('red')
+  })
+  it('transforms green color', () => {
+    expect(
+      c2c('rgb(0, 255, 0)')
+        .toColor('rgb(0,0,0)')
+        .withPercent(100)
+        .get('keyword')
+    ).toEqual('black')
+    expect(
+      c2c('rgb(0, 0, 0)')
+        .toColor('rgb(0,255,0)')
+        .withPercent(100)
+        .get('keyword')
+    ).toEqual('lime')
+  })
+  it('transforms blue color', () => {
+    expect(
+      c2c('rgb(0, 0, 255)')
+        .toColor('rgb(0,0,0)')
+        .withPercent(100)
+        .get('keyword')
+    ).toEqual('black')
+    expect(
+      c2c('rgb(0, 0, 0)')
+        .toColor('rgb(0,0,255)')
+        .withPercent(100)
+        .get('keyword')
+    ).toEqual('blue')
+  })
   it('transforms colors and outputs rgb object', () => {
     expect(
       c2c(c1)
@@ -33,11 +75,12 @@ describe('color-to-color', () => {
       })
     }
   })
+  it('throws error if color model is not recognized', () => {
+    expect(() =>
+      c2c('red')
+        .toColor('green')
+        .withPercent(0)
+        .get('something')
+    ).toThrow()
+  })
 })
-console.log(
-  c2c('red')
-    .toColor('blue')
-    .withPercent(28)
-    .get('rgb')
-)
-console.log(color.get)

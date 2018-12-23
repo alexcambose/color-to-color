@@ -47,7 +47,9 @@ module.exports = from => {
   const get = type => {
     if (!type) return result
     const values = Object.keys(color.to)
-    if (values.indexOf(type) !== -1) { return color.to[type]([result.r, result.g, result.b]) } else throw new Error(`Unknown type '${type}'`)
+    if (values.indexOf(type) !== -1) {
+      return color.to[type]([result.r, result.g, result.b])
+    } else throw new Error(`Unknown type '${type}'`)
   }
   return this
 }
